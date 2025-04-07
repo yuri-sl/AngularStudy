@@ -1,0 +1,16 @@
+<div>
+    <h1>Welcome to my Soul Society</h1>
+    <ul>
+        <li>
+            <button  (click)="onSelectedUser()">
+                <img [src]="selectedUser().avatar" alt="user's image"/>
+                <span>{{ selectedUser().name }}</span>
+            </button>
+        </li>
+        <li>
+            <button (click)="randomize()">
+                <h1>Randomize a new Shinigami!</h1>
+            </button>
+        </li>
+    </ul>
+</div>

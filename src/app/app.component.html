@@ -4,7 +4,7 @@
   <h1>Let's get started!</h1>
   <p>Time to learn all about Angular!</p>
 </header>
-
+<!--(anotherEvent)="onSelectUserOutput($event)"-->
 <main>
   <ul id="users">
     <li>
@@ -30,4 +30,5 @@
       ></app-user>
     </li>
   </ul>
+  <app-user-tasks [UserValue]="selectedUser"></app-user-tasks>
 </main>

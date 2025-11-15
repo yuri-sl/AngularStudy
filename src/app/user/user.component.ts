@@ -5,6 +5,7 @@ import {
   input,
   Output,
   EventEmitter,
+  output,
 } from '@angular/core';
 import { User } from './user.model';
 @Component({
@@ -38,7 +39,9 @@ export class UserComponent {
   }
   //O evento que deve ser passado no componente pai
   //deve ser (select)
-  @Output() select = new EventEmitter(); //Emit custom values for any event that is created
+  @Output() select = new EventEmitter<String>(); //Emit custom values for any event that is created
+  //Don't have to create an EventEmitter
+  anotherEvent = output<String>();
   onSelectUser() {
     this.select.emit(this.id);
   }

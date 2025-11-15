@@ -8,13 +8,26 @@
 <main>
   <ul id="users">
     <li>
-      <app-user [rcv_user]="users[0]"></app-user>
+      <app-user
+        [rcv_user]="users[0]"
+        [rcv_value_test]="'a'"
+        (select)="onSelectUser($event)"
+      >
+      </app-user>
     </li>
     <li>
-      <app-user [rcv_user]="users[1]"></app-user>
+      <app-user
+        [rcv_user]="users[1]"
+        [rcv_value_test]="'a'"
+        (select)="onSelectUser($event)"
+      ></app-user>
     </li>
     <li>
-      <app-user [rcv_user]="users[2]"></app-user>
+      <app-user
+        [rcv_user]="users[2]"
+        [rcv_value_test]="'a'"
+        (select)="onSelectUser($event)"
+      ></app-user>
     </li>
   </ul>
 </main>

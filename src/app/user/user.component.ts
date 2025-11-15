@@ -1,4 +1,11 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  Input,
+  computed,
+  input,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { User } from './user.model';
 @Component({
   selector: 'app-user',
@@ -7,9 +14,16 @@ import { User } from './user.model';
   styleUrl: './user.component.css',
 })
 export class UserComponent {
+  //@Input =>
   //@Input() avatar!: string; //Tells TS that it will receive a value from outside
   //@Input() name!: string;
   //@Input() id!: string;
+
+  //Input Signal => Assigns that the property will receive
+  //a string value
+  //With this notation you don't have to use the !
+  rcv_value_test = input.required<String>();
+  avatarSignal = input<User>();
   id!: String;
   name!: String;
   avatar!: String;
@@ -22,4 +36,13 @@ export class UserComponent {
     this.name = value.name;
     this.avatar = value.avatar;
   }
+  //O evento que deve ser passado no componente pai
+  //deve ser (select)
+  @Output() select = new EventEmitter(); //Emit custom values for any event that is created
+  onSelectUser() {
+    this.select.emit(this.id);
+  }
+  imagePath = computed(() => {
+    return 'assets/users/' + this.avatarSignal.name;
+  });
 }

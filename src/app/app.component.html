@@ -5,11 +5,16 @@
   <p>Time to learn all about Angular!</p>
 </header>
 
-
 <main>
   <ul id="users">
-    <app-test></app-test>
-
+    <li>
+      <app-user [rcv_user]="users[0]"></app-user>
+    </li>
+    <li>
+      <app-user [rcv_user]="users[1]"></app-user>
+    </li>
+    <li>
+      <app-user [rcv_user]="users[2]"></app-user>
+    </li>
   </ul>
-
 </main>

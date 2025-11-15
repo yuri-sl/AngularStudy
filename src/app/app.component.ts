@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { TestanComponent } from './testan/testan.component';
+import { DUMMY_USERS } from './dummy-users';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +12,5 @@ import { TestanComponent } from './testan/testan.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-
+  users = DUMMY_USERS;
 }

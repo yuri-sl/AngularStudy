@@ -1,2 +1,3 @@
+ng new [nome] ->Criar novo projeto
 npm start -> Run the site
 ng generate component [nome do componente] -> Creates a new component

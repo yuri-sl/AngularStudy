@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../user/user.model';
 import { TaskComponent } from '../tasks/task/task.component';
+import { DUMMY_TASKS } from '../tasks/task/dummy_tasks';
 @Component({
   selector: 'app-user-tasks',
   standalone: true,
@@ -11,6 +12,7 @@ import { TaskComponent } from '../tasks/task/task.component';
 export class UserTasksComponent {
   @Input() item: String | undefined; //Creates a union Type.
   @Input() itemWithQuestion?: String; //Same thing
+  loaded_tasks = DUMMY_TASKS;
   id!: string;
   name!: String;
   avatar!: String;
@@ -31,5 +33,10 @@ export class UserTasksComponent {
   @Output() selectedUser = new EventEmitter<String>();
   onSelectedUser() {
     console.log('The selected user is: ' + this.name);
+  }
+  get selectedUserTasks() {
+    return this.loaded_tasks.filter((task) =>
+      task.user_assigned.includes(this.id)
+    );
   }
 }

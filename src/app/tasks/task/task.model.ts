@@ -1,6 +1,7 @@
 export interface task {
-  user_assigned: [string];
+  id: number;
   title: string;
   description: string;
   completed: boolean;
+  user_assigned: string[];
 }

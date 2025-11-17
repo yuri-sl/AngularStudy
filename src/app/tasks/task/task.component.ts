@@ -9,5 +9,14 @@ import { task } from './task.model';
   styleUrl: './task.component.css',
 })
 export class TaskComponent {
-  @Input({ required: true }) user_task?: [task];
+  id!: number;
+  title!: String;
+  description!: String;
+  completed!: boolean;
+  @Input({ required: true }) set UserTaskValue(user_task: task) {
+    this.id = user_task.id;
+    this.title = user_task.title;
+    this.description = user_task.description;
+    this.completed = user_task.completed;
+  }
 }

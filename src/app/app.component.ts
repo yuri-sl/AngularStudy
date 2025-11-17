@@ -31,4 +31,7 @@ export class AppComponent {
   onSelectUserOutput(id: String) {
     console.log('The output with the signal is: ' + id);
   }
+  @Input ({}) setLog(usuarioLogado: String){
+
+  };
 }

@@ -8,6 +8,8 @@ import { User } from '../user/user.model';
   styleUrl: './user-tasks.component.css',
 })
 export class UserTasksComponent {
+  @Input() item: String | undefined;//Creates a union Type.
+  @Input() itemWithQuestion? : String;//Same thing
   id!: string;
   name!: String;
   avatar!: String;
@@ -17,6 +19,14 @@ export class UserTasksComponent {
     this.name = rcv_value.name;
     this.avatar = rcv_value.avatar;
   }
+  /*
+  Now we have to manipulate this user Type Input
+  @Input ({required:true}) user!: {
+    id: string;
+    name: string;
+    avatar: string;
+  }
+  */
   @Output() selectedUser = new EventEmitter<String>();
   onSelectedUser() {
     console.log('The selected user is: ' + this.name);

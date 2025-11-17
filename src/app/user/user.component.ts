@@ -8,6 +8,14 @@ import {
   output,
 } from '@angular/core';
 import { User } from './user.model';
+
+//Creating a type alias for the User
+type UserAlias = {
+  id:String,
+  avatar:String,
+  name:String
+}
+
 @Component({
   selector: 'app-user',
   standalone: true,

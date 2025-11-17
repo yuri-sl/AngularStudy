@@ -14,3 +14,7 @@ h1 {
   -webkit-text-fill-color: transparent;
   font-size: 3rem;
 }
+#users{
+  display: flex;
+  flex-direction: row;
+}

@@ -1,3 +1,12 @@
-<p>user-tasks works!</p>
-
-<h3>Tasks of User: {{ name }}</h3>
+<section id="tasks">
+  <p>user-tasks works!</p>
+  <header>
+    <h3>Tasks of User: {{ name }}</h3>
+    <menu>
+      <button>Add a Task</button>
+    </menu>
+  </header>
+  <ul>
+    <li><app-task></app-task></li>
+  </ul>
+</section>

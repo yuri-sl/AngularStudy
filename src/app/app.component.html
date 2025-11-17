@@ -9,20 +9,19 @@
   <ul id="users">
     <!--Tells Angular which property to identify for each item in the list-->
     @for (user of users; track user.id) {
-      <li>
-        <app-user
-          [rcv_user]="user"
-          [rcv_value_test]="'a'"
-          (select)="onSelectUser($event)"
-        >
-
-        </app-user>
-      </li>
-    } 
+    <li>
+      <app-user
+        [rcv_user]="user"
+        [rcv_value_test]="'a'"
+        (select)="onSelectUser($event)"
+      >
+      </app-user>
+    </li>
+    }
   </ul>
   @if (selectedUser){
-    <app-user-tasks [UserValue]="selectedUser"></app-user-tasks>
+  <app-user-tasks [UserValue]="selectedUser"></app-user-tasks>
   } @else {
-    <p id="fallback"> Select a user to see their tasks </p>
+  <p id="fallback">Select a user to see their tasks</p>
   }
 </main>

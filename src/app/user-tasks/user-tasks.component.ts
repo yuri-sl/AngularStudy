@@ -1,15 +1,16 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../user/user.model';
+import { TaskComponent } from '../tasks/task/task.component';
 @Component({
   selector: 'app-user-tasks',
   standalone: true,
-  imports: [],
+  imports: [TaskComponent],
   templateUrl: './user-tasks.component.html',
   styleUrl: './user-tasks.component.css',
 })
 export class UserTasksComponent {
-  @Input() item: String | undefined;//Creates a union Type.
-  @Input() itemWithQuestion? : String;//Same thing
+  @Input() item: String | undefined; //Creates a union Type.
+  @Input() itemWithQuestion?: String; //Same thing
   id!: string;
   name!: String;
   avatar!: String;

@@ -14,14 +14,20 @@
         [rcv_user]="user"
         [rcv_value_test]="'a'"
         (select)="onSelectUser($event)"
+        [selected]="user.id === selectedUserId"
       >
       </app-user>
+      @if(selectedUser && user.id === selectedUserId){
+        <app-user-tasks [UserValue]="user"></app-user-tasks>
+        @for (task of loaded_tasks; track task.user_assigned){
+           @if (task.user_assigned.includes(selectedUser.id)){
+            <app-task [UserTaskValue]="task"></app-task>
+          }
+        }@empty{
+          <li>Este usuário não tem nenhuma tarefa atribuida a ele</li>
+        }
+      }
     </li>
     }
   </ul>
-  @if (selectedUser){
-  <app-user-tasks [UserValue]="users[0]"></app-user-tasks>
-  } @else {
-  <p id="fallback">Select a user to see their tasks</p>
-  }
 </main>

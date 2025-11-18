@@ -45,6 +45,7 @@ export class UserComponent {
     this.name = value.name;
     this.avatar = value.avatar;
   }
+  @Input({required: true}) selected!: boolean;
   //O evento que deve ser passado no componente pai
   //deve ser (select)
   @Output() select = new EventEmitter<String>(); //Emit custom values for any event that is created

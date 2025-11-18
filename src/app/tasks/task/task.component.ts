@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { task } from './task.model';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { type task } from './task.model';
 
 @Component({
   selector: 'app-task',
@@ -19,4 +19,6 @@ export class TaskComponent {
     this.description = user_task.description;
     this.completed = user_task.completed;
   }
+  @Output() completeTask = new EventEmitter<boolean>();
+  
 }

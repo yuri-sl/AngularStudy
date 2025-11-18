@@ -4,7 +4,9 @@ import { UserComponent } from './user/user.component';
 import { TestanComponent } from './testan/testan.component';
 import { DUMMY_USERS } from './dummy-users';
 import { UserTasksComponent } from './user-tasks/user-tasks.component';
-import { User } from './user/user.model';
+import { type User } from './user/user.model';
+import { TaskComponent } from './tasks/task/task.component';
+import { DUMMY_TASKS } from './tasks/task/dummy_tasks';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -13,12 +15,14 @@ import { User } from './user/user.model';
     UserComponent,
     TestanComponent,
     UserTasksComponent,
+    TaskComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   users = DUMMY_USERS;
+  loaded_tasks = DUMMY_TASKS;
   selectedUserId!: String;
   onSelectUser(id: String) {
     console.log('Selected user with ID: ' + id);

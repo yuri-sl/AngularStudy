@@ -8,6 +8,7 @@ import {
   output,
 } from '@angular/core';
 import { User } from './user.model';
+import { CardComponent } from "../shared/card/card.component";
 
 //Creating a type alias for the User
 type UserAlias = {
@@ -21,6 +22,7 @@ type UserAlias = {
   standalone: true,
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
+  imports: [CardComponent],
 })
 export class UserComponent {
   //@Input =>

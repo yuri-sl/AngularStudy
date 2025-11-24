@@ -1,9 +1,15 @@
+<app-card>
+@if(isAddingTask){
+  <app-new-task (CloseNewTaskEvent)="onCloseAddTask($event)" (AddNewTaskEvent)="onAddNewTask($event)"></app-new-task>  
+}
 <section id="tasks">
   <p>user-tasks works!</p>
   <header>
     <h3>Tasks of User: {{ name }}</h3>
+    <p>{{date}}</p>
     <menu>
-      <button>Add a Task</button>
+      <button (click)="onStartAddTask()">Add a Task</button>
     </menu>
   </header>
 </section>
+</app-card>

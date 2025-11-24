@@ -6,6 +6,7 @@ import { DUMMY_USERS } from './dummy-users';
 import { UserTasksComponent } from './user-tasks/user-tasks.component';
 import { type User } from './user/user.model';
 import { TaskComponent } from './tasks/task/task.component';
+import { NewTaskComponent } from './new-task/new-task.component';
 import { DUMMY_TASKS } from './tasks/task/dummy_tasks';
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { DUMMY_TASKS } from './tasks/task/dummy_tasks';
     HeaderComponent,
     UserComponent,
     TestanComponent,
+    NewTaskComponent,
     UserTasksComponent,
     TaskComponent
   ],
@@ -24,9 +26,13 @@ export class AppComponent {
   users = DUMMY_USERS;
   loaded_tasks = DUMMY_TASKS;
   selectedUserId!: String;
+  isAddingTask: boolean = false;
   onSelectUser(id: String) {
     console.log('Selected user with ID: ' + id);
     this.selectedUserId = id;
+  }
+  onStartAddTask(){
+    this.isAddingTask = true;
   }
 
   get selectedUser() {
@@ -36,6 +42,6 @@ export class AppComponent {
     console.log('The output with the signal is: ' + id);
   }
   @Input ({}) setLog(usuarioLogado: String){
-
+    
   };
 }

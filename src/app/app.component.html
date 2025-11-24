@@ -21,7 +21,7 @@
         <app-user-tasks [UserValue]="user"></app-user-tasks>
         @for (task of loaded_tasks; track task.user_assigned){
            @if (task.user_assigned.includes(selectedUser.id)){
-            <app-task [UserTaskValue]="task"></app-task>
+            <app-task [UserTaskValue]="task" ></app-task>
           }
         }@empty{
           <li>Este usuário não tem nenhuma tarefa atribuida a ele</li>
